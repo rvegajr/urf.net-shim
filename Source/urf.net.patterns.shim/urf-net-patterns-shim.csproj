@@ -13,7 +13,7 @@
     <Copyright>Long Le</Copyright>
     <PackageProjectUrl>https://github.com/urfnet/URF.NET</PackageProjectUrl>
     <PackageTags>repository unitofwork patterns entity-framework </PackageTags>
-    <RepositoryUrl>https://github.com/urfnet/URF.NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/rvegajr/urf.net-shim</RepositoryUrl>
     <Product>UrfNetPatternsShim</Product>
     <PackageId>UrfNetPatternsShim</PackageId>
 	<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>	
