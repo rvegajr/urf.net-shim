@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>urf_net_shim</RootNamespace>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Version>2.1.0.0</Version>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <Authors>Long Le</Authors>
+    <Description>URF - Unit of Work and Repositories Framework (Official): Repository Pattern for Entity Framework 6</Description>
+    <Copyright>Long Le</Copyright>
+    <PackageProjectUrl>https://github.com/urfnet/URF.NET</PackageProjectUrl>
+    <PackageTags>repository unitofwork patterns entity-framework </PackageTags>
+    <RepositoryUrl>https://github.com/urfnet/URF.NET</RepositoryUrl>
+    <Product>UrfNetPatternsShim</Product>
+    <PackageId>UrfNetPatternsShim</PackageId>
+	<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>	
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Repository.Pattern.Ef6\Repository.Pattern.Ef6.csproj">
+      <IncludeAssets>Repository.Pattern.Ef6.dll</IncludeAssets>
+      <CopyLocal>True</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+	  <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository.Pattern\Repository.Pattern.csproj">
+      <CopyLocal>True</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+	  <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>Repository.Pattern.dll</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.Pattern\Service.Pattern.csproj">
+      <IncludeAssets>Service.Pattern.dll</IncludeAssets>
+      <CopyLocal>True</CopyLocal>
+      <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+	  <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
+</Project>
