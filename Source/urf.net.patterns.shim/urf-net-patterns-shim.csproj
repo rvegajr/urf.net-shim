@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net48;net5.0;net6.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>urf_net_shim</RootNamespace>
-    <Nullable>enable</Nullable>
+    
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Version>2.1.0.0</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
+	<Version>2.1.1</Version>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
     <Authors>Long Le</Authors>
     <Description>URF - Unit of Work and Repositories Framework (Official): Repository Pattern for Entity Framework 6</Description>
     <Copyright>Long Le</Copyright>
